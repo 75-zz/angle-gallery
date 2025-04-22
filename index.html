@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>アングル・構図プロンプト検証</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      width: calc((100% - 100px) / 6);
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .card img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .caption {
+      font-size: 0.9em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>アングル・構図プロンプト検証</h1>
+  <div class="grid">
+    
+    <div class="card">
+      <img src="./angle_20250422/00000-full_2025-04-22.jpg" alt="full body">
+      <div class="caption">full body</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00001-upper_2025-04-22.jpg" alt="upper body">
+      <div class="caption">upper body</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00002-cowboy_2025-04-22.jpg" alt="cowboy shot">
+      <div class="caption">cowboy shot</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00003-lower_2025-04-22.jpg" alt="lower body">
+      <div class="caption">lower body</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00005-faux_2025-04-22.jpg" alt="faux figurine">
+      <div class="caption">faux figurine</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00006-head_2025-04-22.jpg" alt="head out of frame">
+      <div class="caption">head out of frame</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00007-cropped_2025-04-22.jpg" alt="cropped shoulders">
+      <div class="caption">cropped shoulders</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00008-cropped_2025-04-22.jpg" alt="cropped shoulders">
+      <div class="caption">cropped shoulders</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00009-cropped_2025-04-22.jpg" alt="cropped shoulders">
+      <div class="caption">cropped shoulders</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00010-feet_2025-04-22.jpg" alt="feet out of frame">
+      <div class="caption">feet out of frame</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00011-out_2025-04-22.jpg" alt="out of frame">
+      <div class="caption">out of frame</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00012-fading_2025-04-22.jpg" alt="fading border">
+      <div class="caption">fading border</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00013-partially_2025-04-22.jpg" alt="partially underwater shot">
+      <div class="caption">partially underwater shot</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00014-male_2025-04-22.jpg" alt="male focus">
+      <div class="caption">male focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00015-solo_2025-04-22.jpg" alt="solo focus">
+      <div class="caption">solo focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00016-other_2025-04-22.jpg" alt="other focus">
+      <div class="caption">other focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00017-ass_2025-04-22.jpg" alt="ass focus">
+      <div class="caption">ass focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00018-hip_2025-04-22.jpg" alt="hip focus">
+      <div class="caption">hip focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00019-foot_2025-04-22.jpg" alt="foot focus">
+      <div class="caption">foot focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00020-eye_2025-04-22.jpg" alt="eye focus">
+      <div class="caption">eye focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00021-back_2025-04-22.jpg" alt="back focus">
+      <div class="caption">back focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00022-breast_2025-04-22.jpg" alt="breast focus">
+      <div class="caption">breast focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00023-pectoral_2025-04-22.jpg" alt="pectoral focus">
+      <div class="caption">pectoral focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00024-hand_2025-04-22.jpg" alt="hand focus">
+      <div class="caption">hand focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00025-armpit_2025-04-22.jpg" alt="armpit focus">
+      <div class="caption">armpit focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00026-navel_2025-04-22.jpg" alt="navel focus">
+      <div class="caption">navel focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00027-hair_2025-04-22.jpg" alt="hair focus">
+      <div class="caption">hair focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00029-facing_2025-04-22.jpg" alt="facing viewer">
+      <div class="caption">facing viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00030-from_2025-04-22.jpg" alt="from side">
+      <div class="caption">from side</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00031-facing_2025-04-22.jpg" alt="facing viewer">
+      <div class="caption">facing viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00032-from_2025-04-22.jpg" alt="from side">
+      <div class="caption">from side</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00033-facing_2025-04-22.jpg" alt="facing viewer">
+      <div class="caption">facing viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00034-from_2025-04-22.jpg" alt="from side">
+      <div class="caption">from side</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00035-facing_2025-04-22.jpg" alt="facing viewer">
+      <div class="caption">facing viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00036-from_2025-04-22.jpg" alt="from side">
+      <div class="caption">from side</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00037-facing_2025-04-22.jpg" alt="facing viewer">
+      <div class="caption">facing viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00038-facing_2025-04-22.jpg" alt="facing viewer">
+      <div class="caption">facing viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00039-facing_2025-04-22.jpg" alt="facing viewer">
+      <div class="caption">facing viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00040-facing_2025-04-22.jpg" alt="facing viewer">
+      <div class="caption">facing viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00041-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00042-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00043-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00044-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00045-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00046-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00047-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00048-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00049-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00050-smiling_2025-04-22.jpg" alt="smiling at viewer">
+      <div class="caption">smiling at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00051-talking_2025-04-22.jpg" alt="talking to viewer">
+      <div class="caption">talking to viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00052-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00053-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00054-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00055-looking_2025-04-22.jpg" alt="looking at viewer">
+      <div class="caption">looking at viewer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00057-profile_2025-04-22.jpg" alt="profile">
+      <div class="caption">profile</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00058-dutch_2025-04-22.jpg" alt="dutch angle">
+      <div class="caption">dutch angle</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00059-upside_2025-04-22.jpg" alt="side view">
+      <div class="caption">side view</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00060-shoe_2025-04-22.jpg" alt="shoe soles">
+      <div class="caption">shoe soles</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00061-pov_2025-04-22.jpg" alt="pov">
+      <div class="caption">pov</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00062-pov_2025-04-22.jpg" alt="pov">
+      <div class="caption">pov</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00063-pantyshot_2025-04-22.jpg" alt="pantyshot">
+      <div class="caption">pantyshot</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00064-pov_2025-04-22.jpg" alt="pov">
+      <div class="caption">pov</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00065-implied_2025-04-22.jpg" alt="implied pantyshot">
+      <div class="caption">implied pantyshot</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00066-female_2025-04-22.jpg" alt="male focus">
+      <div class="caption">male focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00067-upshirt_2025-04-22.jpg" alt="upshirt">
+      <div class="caption">upshirt</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00068-pov_2025-04-22.jpg" alt="pov">
+      <div class="caption">pov</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00069-downblouse_2025-04-22.jpg" alt="downblouse">
+      <div class="caption">downblouse</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00070-pov_2025-04-22.jpg" alt="pov">
+      <div class="caption">pov</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00071-pov_2025-04-22.jpg" alt="pov">
+      <div class="caption">pov</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00072-zettai_2025-04-22.jpg" alt="zettai ryouiki">
+      <div class="caption">zettai ryouiki</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00073-thigh_2025-04-22.jpg" alt="thigh gap">
+      <div class="caption">thigh gap</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00074-solo_2025-04-22.jpg" alt="solo focus">
+      <div class="caption">solo focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00075-no_2025-04-22.jpg" alt="no humans">
+      <div class="caption">no humans</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00076-1girl_2025-04-22.jpg" alt="1girl">
+      <div class="caption">1girl</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00077-1boy_2025-04-22.jpg" alt="1boy">
+      <div class="caption">1boy</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00078-2girls_2025-04-22.jpg" alt="2girls">
+      <div class="caption">2girls</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00079-2boys_2025-04-22.jpg" alt="2boys">
+      <div class="caption">2boys</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00080-3girls_2025-04-22.jpg" alt="3girls">
+      <div class="caption">3girls</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00081-3boys_2025-04-22.jpg" alt="3boys">
+      <div class="caption">3boys</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00082-4girls_2025-04-22.jpg" alt="4girls">
+      <div class="caption">4girls</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00083-4boys_2025-04-22.jpg" alt="4boys">
+      <div class="caption">4boys</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00084-5girls_2025-04-22.jpg" alt="5girls">
+      <div class="caption">5girls</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00085-5boys_2025-04-22.jpg" alt="5boys">
+      <div class="caption">5boys</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00088-multiple_2025-04-22.jpg" alt="multiple girls">
+      <div class="caption">multiple girls</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00089-multiple_2025-04-22.jpg" alt="multiple girls">
+      <div class="caption">multiple girls</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00090-multiple_2025-04-22.jpg" alt="multiple girls">
+      <div class="caption">multiple girls</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00091-multiple_2025-04-22.jpg" alt="multiple girls">
+      <div class="caption">multiple girls</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00092-everyone_2025-04-22.jpg" alt="everyone">
+      <div class="caption">everyone</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00093-lineup_2025-04-22.jpg" alt="lineup">
+      <div class="caption">lineup</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00094-column_2025-04-22.jpg" alt="column lineup">
+      <div class="caption">column lineup</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00095-collage_2025-04-22.jpg" alt="collage">
+      <div class="caption">collage</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00096-expressions_2025-04-22.jpg" alt="expressions">
+      <div class="caption">expressions</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00097-expression_2025-04-22.jpg" alt="expression chart">
+      <div class="caption">expression chart</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00098-chibi_2025-04-22.jpg" alt="chibi inset">
+      <div class="caption">chibi inset</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00099-projected_2025-04-22.jpg" alt="projected inset">
+      <div class="caption">projected inset</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00100-zoom_2025-04-22.jpg" alt="zoom layer">
+      <div class="caption">zoom layer</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00101-wide_2025-04-22.jpg" alt="wide shot">
+      <div class="caption">wide shot</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00102-very_2025-04-22.jpg" alt="very wide shot">
+      <div class="caption">very wide shot</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00103-fisheye_2025-04-22.jpg" alt="eye focus">
+      <div class="caption">eye focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00104-perspective_2025-04-22.jpg" alt="perspective">
+      <div class="caption">perspective</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00105-isometric_2025-04-22.jpg" alt="isometric">
+      <div class="caption">isometric</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00106-foreshortening_2025-04-22.jpg" alt="foreshortening">
+      <div class="caption">foreshortening</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00107-vanishing_2025-04-22.jpg" alt="vanishing point">
+      <div class="caption">vanishing point</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00108-depth_2025-04-22.jpg" alt="depth of field">
+      <div class="caption">depth of field</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00109-blurry_2025-04-22.jpg" alt="blurry">
+      <div class="caption">blurry</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00110-bokeh_2025-04-22.jpg" alt="bokeh">
+      <div class="caption">bokeh</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00111-front_2025-04-22.jpg" alt="front view">
+      <div class="caption">front view</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00112-rear_2025-04-22.jpg" alt="rear view">
+      <div class="caption">rear view</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00113-side_2025-04-22.jpg" alt="side view">
+      <div class="caption">side view</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00114-on_2025-04-22.jpg" alt="on side">
+      <div class="caption">on side</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00117-upskirt_2025-04-22.jpg" alt="upskirt">
+      <div class="caption">upskirt</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00118-voyeur_2025-04-22.jpg" alt="voyeur">
+      <div class="caption">voyeur</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00121-selfie_2025-04-22.jpg" alt="selfie">
+      <div class="caption">selfie</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00122-first_2025-04-22.jpg" alt="first person view">
+      <div class="caption">first person view</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00123-male_2025-04-22.jpg" alt="male focus">
+      <div class="caption">male focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00124-human_2025-04-22.jpg" alt="human pov">
+      <div class="caption">human pov</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00125-female_2025-04-22.jpg" alt="male focus">
+      <div class="caption">male focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00126-human_2025-04-22.jpg" alt="human pov">
+      <div class="caption">human pov</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00127-butt_2025-04-22.jpg" alt="butt focus">
+      <div class="caption">butt focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00128-butt_2025-04-22.jpg" alt="butt focus">
+      <div class="caption">butt focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00129-duo_2025-04-22.jpg" alt="duo focus">
+      <div class="caption">duo focus</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00130-base_2025-04-22.jpg" alt="base three layout">
+      <div class="caption">base three layout</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00131-being_2025-04-22.jpg" alt="being watched">
+      <div class="caption">being watched</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00132-legless_2025-04-22.jpg" alt="legless">
+      <div class="caption">legless</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00133-multiple_2025-04-22.jpg" alt="multiple girls">
+      <div class="caption">multiple girls</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00134-photo_2025-04-22.jpg" alt="photo">
+      <div class="caption">photo</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00135-blockage_2025-04-22.jpg" alt="blockage ¥(layout¥)">
+      <div class="caption">blockage ¥(layout¥)</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00136-horizontal_2025-04-22.jpg" alt="on side">
+      <div class="caption">on side</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00137-size_2025-04-22.jpg" alt="size difference">
+      <div class="caption">size difference</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00138-extreme_2025-04-22.jpg" alt="extreme size difference">
+      <div class="caption">extreme size difference</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00139-age_2025-04-22.jpg" alt="age difference">
+      <div class="caption">age difference</div>
+    </div>
+    
+    <div class="card">
+      <img src="./angle_20250422/00140-breast_2025-04-22.jpg" alt="breast focus">
+      <div class="caption">breast focus</div>
+    </div>
+    
+  </div>
+</body>
+</html>
