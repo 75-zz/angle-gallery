@@ -593,10 +593,21 @@
 <script>
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('click', () => {
+    // ズーム切り替え
     document.querySelectorAll('.card').forEach(c => {
       if (c !== card) c.classList.remove('zoomed');
     });
     card.classList.toggle('zoomed');
+
+    // alt属性をコピー
+    const img = card.querySelector('img');
+    if (img && navigator.clipboard) {
+      navigator.clipboard.writeText(img.alt).then(() => {
+        console.log(`Copied to clipboard: ${img.alt}`);
+      }).catch(err => {
+        console.error('Failed to copy alt text', err);
+      });
+    }
   });
 });
 </script></body>
