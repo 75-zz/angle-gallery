@@ -57,6 +57,34 @@
   transform: scale(1.1) !important;
   z-index: 999;
 }
+</style><style>
+#toast {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px;
+  position: fixed;
+  z-index: 1000;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+}
+#toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2s;
+}
+@keyframes fadein {
+  from { bottom: 10px; opacity: 0; }
+  to { bottom: 30px; opacity: 1; }
+}
+@keyframes fadeout {
+  from { bottom: 30px; opacity: 1; }
+  to { bottom: 10px; opacity: 0; }
+}
 </style></head>
 <body>
 <h1>アングル・構図プロンプト検証</h1>
@@ -590,25 +618,30 @@
 <div class="caption">breast size difference</div>
 </div>
 </div>
-<script>
+<div id="toast">コピーしました！</div><script>
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('click', () => {
-    // ズーム切り替え
     document.querySelectorAll('.card').forEach(c => {
       if (c !== card) c.classList.remove('zoomed');
     });
     card.classList.toggle('zoomed');
 
-    // alt属性をコピー
     const img = card.querySelector('img');
     if (img && navigator.clipboard) {
       navigator.clipboard.writeText(img.alt).then(() => {
-        console.log(`Copied to clipboard: ${img.alt}`);
+        showToast("コピーしました：" + img.alt);
       }).catch(err => {
         console.error('Failed to copy alt text', err);
       });
     }
   });
 });
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.className = "show";
+  setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 2500);
+}
 </script></body>
 </html>
