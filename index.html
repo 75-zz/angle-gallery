@@ -42,13 +42,13 @@
     }
   </style>
 <style>
-.card img {
+.card {
   transition: transform 0.3s ease;
   transform: scale(1);
   cursor: pointer;
 }
 @media (hover: hover) and (pointer: fine) {
-  .card img:hover {
+  .card:hover {
     transform: scale(1.2);
     z-index: 2;
   }
@@ -591,12 +591,12 @@
 </div>
 </div>
 <script>
-document.querySelectorAll('.card img').forEach(img => {
-  img.addEventListener('click', () => {
-    document.querySelectorAll('.card img').forEach(i => {
-      if (i !== img) i.classList.remove('zoomed');
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.card').forEach(c => {
+      if (c !== card) c.classList.remove('zoomed');
     });
-    img.classList.toggle('zoomed');
+    card.classList.toggle('zoomed');
   });
 });
 </script></body>
