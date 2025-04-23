@@ -11,6 +11,7 @@
       background: #f9f9f9;
       margin: 0;
     }
+
     .grid {
       display: grid;
       gap: 20px;
@@ -19,6 +20,7 @@
       max-width: 2400px;
       margin: 0 auto;
     }
+
     .card {
       background: white;
       border: 1px solid #ccc;
@@ -27,7 +29,9 @@
       box-sizing: border-box;
       text-align: center;
       overflow: hidden;
+      position: relative;
     }
+
     .card img {
       width: 100%;
       height: auto;
@@ -35,17 +39,19 @@
       margin-bottom: 8px;
       border-radius: 4px;
       transition: transform 0.3s ease;
+      transform: scale(1); /* ← 通常表示はそのまま */
       cursor: pointer;
     }
 
-    /* PC版：マウスオーバーで拡大 */
+    /* PC版：ホバー時にだけ拡大 */
     @media (hover: hover) and (pointer: fine) {
       .card img:hover {
         transform: scale(1.2);
+        z-index: 2;
       }
     }
 
-    /* スマホ版：タップで拡大 */
+    /* スマホ版：タップ時に拡大（class付与） */
     .zoomed {
       transform: scale(1.5) !important;
       z-index: 999;
@@ -61,26 +67,4 @@
 <body>
   <h1>アングル・構図プロンプト検証</h1>
   <div class="grid">
-    <!-- 以下、既存のカード内容を維持 -->
-    <!-- 例： -->
-    <div class="card">
-      <img src="./angle_20250422/00000-full_2025-04-22.jpg" alt="full body">
-      <div class="caption">full body</div>
-    </div>
-    <!-- 他の画像も同様に -->
-  </div>
-
-  <script>
-    // スマホ版用ズーム処理
-    document.querySelectorAll('.card img').forEach(img => {
-      img.addEventListener('click', () => {
-        // 一度に一つだけ拡大
-        document.querySelectorAll('.card img').forEach(i => {
-          if (i !== img) i.classList.remove('zoomed');
-        });
-        img.classList.toggle('zoomed');
-      });
-    });
-  </script>
-</body>
-</html>
+    <!-- ここに既存のカード（
