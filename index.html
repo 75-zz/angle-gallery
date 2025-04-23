@@ -39,11 +39,11 @@
       margin-bottom: 8px;
       border-radius: 4px;
       transition: transform 0.3s ease;
-      transform: scale(1); /* ← 通常表示はそのまま */
+      transform: scale(1); /* 通常時のサイズ */
       cursor: pointer;
     }
 
-    /* PC版：ホバー時にだけ拡大 */
+    /* PC版：マウスオーバーで拡大 */
     @media (hover: hover) and (pointer: fine) {
       .card img:hover {
         transform: scale(1.2);
@@ -51,7 +51,7 @@
       }
     }
 
-    /* スマホ版：タップ時に拡大（class付与） */
+    /* スマホ版：タップで拡大 */
     .zoomed {
       transform: scale(1.5) !important;
       z-index: 999;
@@ -67,4 +67,48 @@
 <body>
   <h1>アングル・構図プロンプト検証</h1>
   <div class="grid">
-    <!-- ここに既存のカード（
+
+    <div class="card">
+      <img src="./angle_20250422/00000-full_2025-04-22.jpg" alt="full body">
+      <div class="caption">full body</div>
+    </div>
+
+    <div class="card">
+      <img src="./angle_20250422/00001-upper_2025-04-22.jpg" alt="upper body">
+      <div class="caption">upper body</div>
+    </div>
+
+    <div class="card">
+      <img src="./angle_20250422/00002-cowboy_2025-04-22.jpg" alt="cowboy shot">
+      <div class="caption">cowboy shot</div>
+    </div>
+
+    <div class="card">
+      <img src="./angle_20250422/00003-lower_2025-04-22.jpg" alt="lower body">
+      <div class="caption">lower body</div>
+    </div>
+
+    <div class="card">
+      <img src="./angle_20250422/00004-upper_2025-04-22.jpg" alt="upper closeup">
+      <div class="caption">upper closeup</div>
+    </div>
+
+    <!-- 必要に応じて他の画像カードもここに追加 -->
+
+  </div>
+
+  <script>
+    // スマホで画像をタップしたときに拡大表示
+    document.querySelectorAll('.card img').forEach(img => {
+      img.addEventListener('click', () => {
+        // 他の画像を縮小
+        document.querySelectorAll('.card img').forEach(i => {
+          if (i !== img) i.classList.remove('zoomed');
+        });
+        // 現在の画像の拡大/縮小を切り替え
+        img.classList.toggle('zoomed');
+      });
+    });
+  </script>
+</body>
+</html>
